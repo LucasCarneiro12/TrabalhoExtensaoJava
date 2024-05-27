@@ -23,13 +23,12 @@ import java.awt.Color;
 import javax.swing.JEditorPane;
 import javax.swing.ImageIcon;
 
-public class ProgramaMenuAdmin extends JFrame {
+public class acessoAdmin extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField tfUsuario;
 	private JPasswordField pfSenha;
-	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -38,7 +37,7 @@ public class ProgramaMenuAdmin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ProgramaMenuAdmin frame = new ProgramaMenuAdmin();
+					acessoAdmin frame = new acessoAdmin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +49,8 @@ public class ProgramaMenuAdmin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ProgramaMenuAdmin() {
+	public acessoAdmin() {
+		setResizable(false);
 		setTitle("Acesso para adminstrador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 461, 300);
@@ -63,25 +63,25 @@ public class ProgramaMenuAdmin extends JFrame {
 		
 		JLabel lblUsuario = new JLabel("Usuário");
 		lblUsuario.setFont(new Font("Baskerville Old Face", Font.BOLD, 13));
-		lblUsuario.setBounds(10, 57, 61, 32);
+		lblUsuario.setBounds(234, 48, 200, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Baskerville Old Face", Font.BOLD, 13));
-		lblSenha.setBounds(10, 100, 57, 32);
+		lblSenha.setBounds(234, 115, 200, 32);
 		contentPane.add(lblSenha);
 		
 		tfUsuario = new JTextField();
 		tfUsuario.setFont(new Font("Arial", Font.PLAIN, 13));
-		tfUsuario.setBounds(121, 61, 210, 23);
+		tfUsuario.setBounds(224, 72, 210, 32);
 		contentPane.add(tfUsuario);
 		tfUsuario.setColumns(10);
 		
 		pfSenha = new JPasswordField();
-		pfSenha.setBounds(121, 100, 210, 23);
+		pfSenha.setBounds(224, 141, 210, 32);
 		contentPane.add(pfSenha);
 		
-		JButton btnEntrar = new JButton("Criar funcionário");
+		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.setBackground(new Color(183, 255, 255));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -106,7 +106,7 @@ public class ProgramaMenuAdmin extends JFrame {
 					
 					JOptionPane.showMessageDialog(null, "Bem-vindo!");	
 			
-						ProgramaMenu exibir = new ProgramaMenu();
+						ProgramaMenuAdmin exibir = new ProgramaMenuAdmin();
 						exibir.setVisible(true);
 							
 			
@@ -114,7 +114,8 @@ public class ProgramaMenuAdmin extends JFrame {
 					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Usuario ou Senha incorreta.");
+					JOptionPane.showMessageDialog(null, "Usuario/Senha incorreta \n"
+							+ "  ou você não é admin");
 				}
 				
 				stmt.close();
@@ -127,33 +128,28 @@ public class ProgramaMenuAdmin extends JFrame {
 			
 			}
 		});
-		btnEntrar.setFont(new Font("Book Antiqua", Font.BOLD, 12));
-		btnEntrar.setBounds(10, 199, 172, 32);
+		btnEntrar.setFont(new Font("Baskerville Old Face", Font.BOLD, 11));
+		btnEntrar.setBounds(278, 185, 89, 23);
 		contentPane.add(btnEntrar);
 		
-		JLabel lblNewLabel_3 = new JLabel("Cadastrar usuário");
-		lblNewLabel_3.setFont(new Font("Baskerville Old Face", Font.BOLD, 18));
-		lblNewLabel_3.setBounds(155, -4, 150, 54);
-		contentPane.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel = new JLabel("Lakatus");
-		lblNewLabel.setFont(new Font("Baskerville Old Face", Font.PLAIN, 14));
-		lblNewLabel.setBounds(393, 2, 122, 23);
+		JLabel lblNewLabel = new JLabel("Insira seus dados de adminstrador");
+		lblNewLabel.setFont(new Font("Baskerville Old Face", Font.BOLD, 14));
+		lblNewLabel.setBounds(234, 11, 200, 39);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblCpf = new JLabel("CPF");
-		lblCpf.setFont(new Font("Baskerville Old Face", Font.BOLD, 13));
-		lblCpf.setBounds(10, 139, 57, 32);
-		contentPane.add(lblCpf);
+		JLabel lblNewLabel_1 = new JLabel("Lokatus");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\EVANICE\\Downloads\\WhatsApp Image 2024-05-21 at 23.25.53.jpeg"));
+		lblNewLabel_1.setBounds(0, 0, 219, 261);
+		contentPane.add(lblNewLabel_1);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(121, 143, 210, 23);
-		contentPane.add(passwordField);
+		JLabel lblNewLabel_2 = new JLabel("Lakatus");
+		lblNewLabel_2.setFont(new Font("Baskerville Old Face", Font.BOLD, 14));
+		lblNewLabel_2.setBounds(46, 103, 94, 46);
+		contentPane.add(lblNewLabel_2);
 		
-		JButton btnCriarAdminstrador = new JButton("Criar Adminstrador");
-		btnCriarAdminstrador.setFont(new Font("Book Antiqua", Font.BOLD, 12));
-		btnCriarAdminstrador.setBackground(new Color(183, 255, 255));
-		btnCriarAdminstrador.setBounds(263, 199, 172, 32);
-		contentPane.add(btnCriarAdminstrador);
+		JLabel lblNewLabel_3 = new JLabel("Lakatus");
+		lblNewLabel_3.setFont(new Font("Baskerville Old Face", Font.BOLD, 18));
+		lblNewLabel_3.setBounds(34, 83, 150, 54);
+		contentPane.add(lblNewLabel_3);
 	}
 }

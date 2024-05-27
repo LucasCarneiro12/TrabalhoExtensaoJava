@@ -69,7 +69,11 @@ public class ProgramaMenu extends JFrame {
 		JButton btnCadastrarUser = new JButton("Cadastrar usuario");
 		btnCadastrarUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				acessoAdmin exibir = new acessoAdmin();
+				exibir.setVisible(true);
+					
+	
+				setVisible(false);
 				
 			}
 		});
