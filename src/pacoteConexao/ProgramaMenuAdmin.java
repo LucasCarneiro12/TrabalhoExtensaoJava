@@ -23,7 +23,7 @@ import java.awt.Color;
 import javax.swing.JEditorPane;
 import javax.swing.ImageIcon;
 
-public class ProgramaLogin extends JFrame {
+public class ProgramaMenuAdmin extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -37,7 +37,7 @@ public class ProgramaLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ProgramaLogin frame = new ProgramaLogin();
+					ProgramaMenuAdmin frame = new ProgramaMenuAdmin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,11 +49,11 @@ public class ProgramaLogin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ProgramaLogin() {
+	public ProgramaMenuAdmin() {
 		setResizable(false);
-		setTitle("Tela de Acesso");
+		setTitle("Acesso para adminstrador");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 461, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(128, 255, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -63,33 +63,33 @@ public class ProgramaLogin extends JFrame {
 		
 		JLabel lblUsuario = new JLabel("Usuário");
 		lblUsuario.setFont(new Font("Baskerville Old Face", Font.BOLD, 13));
-		lblUsuario.setBounds(234, 0, 200, 32);
+		lblUsuario.setBounds(234, 48, 200, 32);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Baskerville Old Face", Font.BOLD, 13));
-		lblSenha.setBounds(234, 67, 200, 32);
+		lblSenha.setBounds(234, 115, 200, 32);
 		contentPane.add(lblSenha);
 		
 		tfUsuario = new JTextField();
 		tfUsuario.setFont(new Font("Arial", Font.PLAIN, 13));
-		tfUsuario.setBounds(224, 28, 200, 32);
+		tfUsuario.setBounds(224, 72, 210, 32);
 		contentPane.add(tfUsuario);
 		tfUsuario.setColumns(10);
 		
 		pfSenha = new JPasswordField();
-		pfSenha.setBounds(224, 95, 200, 32);
+		pfSenha.setBounds(224, 141, 210, 32);
 		contentPane.add(pfSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.setBackground(new Color(3, 119, 0));
+		btnEntrar.setBackground(new Color(183, 255, 255));
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			try {	
 				Connection con = Conexao.FazConexao();
 				
-				String sql = "select * from usuarios where usuario=? and senha=?";
+				String sql = "select * from superuser where usuario=? and senha=?";
 				
 				PreparedStatement stmt = con.prepareStatement(sql);
 				
@@ -128,22 +128,12 @@ public class ProgramaLogin extends JFrame {
 			}
 		});
 		btnEntrar.setFont(new Font("Baskerville Old Face", Font.BOLD, 11));
-		btnEntrar.setBounds(276, 138, 89, 23);
+		btnEntrar.setBounds(278, 185, 89, 23);
 		contentPane.add(btnEntrar);
 		
-		JButton btnSuporte = new JButton("Suporte");
-		btnSuporte.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Entre em contato com o seu suporte pelo Número 123456789");
-			}
-		});
-		btnSuporte.setFont(new Font("Baskerville Old Face", Font.BOLD, 11));
-		btnSuporte.setBounds(276, 227, 89, 23);
-		contentPane.add(btnSuporte);
-		
-		JLabel lblNewLabel = new JLabel("Esqueceu a senha?");
-		lblNewLabel.setFont(new Font("Baskerville Old Face", Font.PLAIN, 11));
-		lblNewLabel.setBounds(276, 202, 109, 14);
+		JLabel lblNewLabel = new JLabel("Insira seus dados de adminstrador");
+		lblNewLabel.setFont(new Font("Baskerville Old Face", Font.BOLD, 14));
+		lblNewLabel.setBounds(234, 11, 200, 39);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Lokatus");

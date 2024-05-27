@@ -10,6 +10,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -61,6 +62,18 @@ public class ProgramaMenu extends JFrame {
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Admin");
 		mnNewMenu_1.add(mntmNewMenuItem_3);
+		
+		JMenu mnCadastro = new JMenu("Cadastro");
+		menuBar.add(mnCadastro);
+		
+		JButton btnCadastrarUser = new JButton("Cadastrar usuario");
+		btnCadastrarUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		mnCadastro.add(btnCadastrarUser);
 		
 		JMenu mnNewMenu_2 = new JMenu("Encerrar seção");
 		menuBar.add(mnNewMenu_2);
