@@ -2,6 +2,9 @@ package pacoteConexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Conexao {
 
@@ -13,11 +16,7 @@ public class Conexao {
 	*/
 
 	public static Connection FazConexao() {
-	/*	url = "jdbc:postgresql://localhost:5432/db_login";
-		usuario = "postgres";
-		senha = "Lucas";
-		*/
-		
+	
 		
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -34,6 +33,43 @@ public class Conexao {
 		
 	
 	}
+	
+	public static void fecharConcexao(Connection con) {
+		if(con != null) {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	public static void fecharConcexao(Connection con, PreparedStatement pstm) {
+		if(con != null) {
+			try {
+				con.close();
+				pstm.close();
+				
+				} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	
+	public static void fecharConcexao(Connection con, PreparedStatement pstm, ResultSet rs) {
+		if(con != null) {
+			try {
+				con.close();
+				pstm.close();
+				rs.close();
+				} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	
 	
 }
