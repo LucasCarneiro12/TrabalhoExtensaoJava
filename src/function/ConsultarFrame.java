@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import entities.Contrato;
 import entities.Evento;
+import java.awt.Color;
 
 public class ConsultarFrame extends JFrame {
     private JTextField idContratoField;
@@ -15,6 +16,7 @@ public class ConsultarFrame extends JFrame {
     private List<Contrato> contratos;
 
     public ConsultarFrame(List<Contrato> contratos) {
+    	getContentPane().setBackground(new Color(128, 255, 128));
         this.contratos = contratos;
 
         setTitle("Consultar Contrato");
@@ -84,7 +86,7 @@ public class ConsultarFrame extends JFrame {
         getContentPane().add(btnConsultar);
 
         resultadoArea = new JTextArea();
-        resultadoArea.setBounds(10, 115, 470, 235);
+        resultadoArea.setBounds(10, 115, 464, 235);
         getContentPane().add(resultadoArea);
     }
 }

@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import application.MainFrame;
+
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -106,7 +109,7 @@ public class ProgramaLogin extends JFrame {
 					
 					JOptionPane.showMessageDialog(null, "Bem-vindo!");	
 			
-						ProgramaMenu exibir = new ProgramaMenu();
+						MainFrame exibir = new MainFrame();
 						exibir.setVisible(true);
 							
 			

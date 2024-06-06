@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import entities.Contrato;
 import entities.Evento;
+import java.awt.Color;
 
 public class MovimentarFrame extends JFrame {
     private JTextField idContratoField;
@@ -17,6 +18,7 @@ public class MovimentarFrame extends JFrame {
     private List<Contrato> contratos;
 
     public MovimentarFrame(List<Contrato> contratos) {
+    	getContentPane().setBackground(new Color(128, 255, 128));
         this.contratos = contratos;
 
         setTitle("Movimentar Contrato");
